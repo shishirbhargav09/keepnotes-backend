@@ -20,6 +20,7 @@ app.use(express.json())
 
 app.get("/",(req,res) => {
   res.send("Welcome To Task Manager Api")
+  res.send("Endpoints : /api/auth/createuser(Post)  ,  /api/auth/login(Post) ,  /api/notes/fetchallnotes(get),  /api/notes/addnote(Post)   /api/notes/updatenote/:id(Put)    /api/notes/deletenote/:id(Delete)")
 })
 
 // Available Routes
