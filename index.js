@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const express = require('express')
 var cors = require('cors') 
-// require('dotenv').config();
+require('dotenv').config();
 const mongoString = process.env.DATABASE_URL
 mongoose.connect(mongoString);
 const database = mongoose.connection
@@ -17,6 +17,10 @@ const app = express()
 
 app.use(cors())
 app.use(express.json())
+
+app.get("/",(req,res) => {
+  res.send("Welcome To Task Manager Api")
+})
 
 // Available Routes
 app.use('/api/auth', require('./routes/auth'))
